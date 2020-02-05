@@ -59,3 +59,11 @@ body {
     left: 0;
     min-height: 300px;
 }
+
+#carouselButton {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    /* needed to make pause and play button to work: */
+    z-index: 1;
+}
