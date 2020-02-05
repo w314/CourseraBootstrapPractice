@@ -200,7 +200,8 @@
 
         <!-- CAROUSEL -->
         <div class="row row-content">
-            <div class="col">
+            <!-- p-0 class needed for pause/play button to be inside carousel -->
+            <div class="col p-0">
                 <div id="mycarousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
@@ -254,16 +255,12 @@
                         <span class="carousel-control-next-icon"></span>
                     </a>
                 </div> <!-- end of #mycarousel -->
-                <!-- carouel controls to pause and play -->
-                <!-- had to be moved from out of #mycarousel & add z-index: 1 to work -->
-                <div class="btn-group" id="carouselButton">
-                    <button class="btn btn-danger btn-sm" id="carousel-pause">
-                        <span class="fa fa-pause"></span>
-                    </button>
-                    <button class="btn btn-danger btn-sm" id="carousel-play">
-                        <span class="fa fa-play"></span>
-                    </button>
-                </div>
+                
+                <!-- carousel pause/play button, had to take it outside of #mycarousel to make it work -->
+                <button class="btn btn-danger btn-sm" id="carouselButton">
+                    <span class="fa fa-pause"></span>
+                </button>
+
             </div>            
         </div> 
         <!-- END OF CAROUSEL -->
@@ -316,28 +313,30 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
     <!-- script for tooltip -->
-    <!-- 
-    <script>
+    <!-- <script>
         $(document).ready(function() {
             $('[data-toggle="tooltip"]').tooltip();
         });
-    </script>
-    -->
+    </script> -->
 
-    <!-- script for carousel pause and play buttons -->
+    <!-- CAROUSEL pause/play button script -->
     <script>
         $(document).ready(function() {
-            $('#mycarousel').carousel({ interval: 2000 });
-            $('#carousel-pause').click(function() {
-                console.log('pause button clicked');
-                $('#mycarousel').carousel('pause');
+            $('#mycarousel').carousel({interval: 1000});
+            $('#carouselButton').click(function() {
+                if($('#carouselButton').children('span').hasClass('fa-pause')) {
+                    $('#mycarousel').carousel('pause');
+                }
+                else {
+                    $('#mycarousel').carousel('cycle');
+                }
+                $('#carouselButton').children('span').toggleClass('fa-pause fa-play');
             });
-            $('#carousel-play').click(function() {
-                $('#mycarousel').carousel('cycle');
-            });
-        })
-    </script>
+        });
+    </script> <!-- end of carousel pause/play script -->
+    
 </body>
 
 </html>
