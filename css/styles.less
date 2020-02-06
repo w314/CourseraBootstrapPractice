@@ -1,3 +1,4 @@
+// --- VARIABLES --- //
 @lt-gray: #ddd;
 @background-dark: #512da8;
 @background-light: #9575cd;
@@ -7,13 +8,23 @@
 @carousel-item-height: 300px;
 
 
+// --- MIXINS --- //
 .zero-margin (@pad-up-dn: 0px, @pad-left-right: 0px) {
     margin: 0px auto;
     padding: @pad-up-dn @pad-left-right;
 }
 
+
+// --- CLASSES --- //
+
 .row-header {
     .zero-margin();
+}
+
+.row-content {
+    .zero-margin(50px, 0px);
+    border-bottom: 1px ridge;
+    min-height: 400px;
 }
 
 .footer {
@@ -48,6 +59,8 @@ body {
     padding: 10px;
 }
 
+
+// --- NESTING SELECTORS --- //
 .carousel {
     background: @background-dark;
 
