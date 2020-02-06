@@ -82,3 +82,19 @@ body {
     bottom: 0px;
     z-index: 1;
 }
+
+
+// Styling Modal
+
+.modal-header {
+    background-color: $background-dark;
+    color: floralwhite;
+
+    button {
+        color: floralwhite;
+    }
+}
+
+.modal-body {
+    background-color: $background-pale;
+}

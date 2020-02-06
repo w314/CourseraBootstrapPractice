@@ -33,10 +33,18 @@
                     <li class="nav-item"><a href="./contactus.html" class="nav-link"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <!-- login link with data-* attributes -->
+                    <!-- <a data-toggle="modal" data-target="#loginModal">
+                        <span class="fa fa-sign-in"></span>
+                         Login
+                    </a> -->
+
+                    <!-- login link without using js code to work -->
+                    <a id="login">
                         <span class="fa fa-sign-in"></span>
                          Login
                     </a>
+
                 </span>
             </div>
         </div>
@@ -189,9 +197,15 @@
                     <a role="button" href="#makeReservation" class="btn btn-sm btn-warning btn-block"
                     data-toggle="tooltip" data-html="true" title="Or Call us at <br><strong>+852 12345678</strong> " data-placement="bottom">Reserve Table</a>
                      -->
-                     <!-- reserve button with modal -->
+
+                     <!-- reserve button with modal using data-* attributes -->
+                     <!-- 
                      <a role="button" data-toggle="modal" data-target="#reservationModal" class="btn btn-sm btn-warning btn-block">Reserve Table</a>
-                </div>
+                      -->
+                    
+                    <!-- reserve button with modal using modal script -->
+                    <a class="btn btn-sm btn-warning btn-block" id="reserveTable"> Reserve Table</a>
+               </div>
             </div>
         </div>
     </header>
@@ -336,7 +350,21 @@
             });
         });
     </script> <!-- end of carousel pause/play script -->
-    
+
+    <!-- MODAL script -->
+    <script>
+        $('document').ready(function() {
+            // for loginModal
+            $('#login').click(function() {
+                $('#loginModal').modal('show');
+            });
+            // for reservationModal
+            $('#reserveTable').click(function() {
+                $('#reservationModal').modal('show');
+            });
+        });
+    </script> <!-- end of modal script -->
+
 </body>
 
 </html>
