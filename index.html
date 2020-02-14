@@ -323,40 +323,12 @@
            </div>
         </div>
     </footer>
-
+    
+    <!-- First jquery, than popper, than bootstrap -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            // script for tooltip
-            $('[data-toggle="tooltip"]').tooltip();
-
-            // CAROUSEL pause/play button script
-            $('#mycarousel').carousel({interval: 1000});
-            $('#carouselButton').click(function() {
-                if($('#carouselButton').children('span').hasClass('fa-pause')) {
-                    $('#mycarousel').carousel('pause');
-                }
-                else {
-                    $('#mycarousel').carousel('cycle');
-                }
-                $('#carouselButton').children('span').toggleClass('fa-pause fa-play');
-            });
-    
-            // MODAL script
-            // for loginModal
-            $('#login').click(function() {
-                $('#loginModal').modal('show');
-            });
-            // for reservationModal
-            $('#reserveTable').click(function() {
-                $('#reservationModal').modal('show');
-            });
-        });
-    </script> <!-- end of carousel pause/play script -->
+    <script src="js/scripts.js"></script>
 
 </body>
 
