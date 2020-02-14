@@ -328,16 +328,13 @@
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- script for tooltip -->
-    <!-- <script>
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script> -->
 
-    <!-- CAROUSEL pause/play button script -->
     <script>
         $(document).ready(function() {
+            // script for tooltip
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // CAROUSEL pause/play button script
             $('#mycarousel').carousel({interval: 1000});
             $('#carouselButton').click(function() {
                 if($('#carouselButton').children('span').hasClass('fa-pause')) {
@@ -348,12 +345,8 @@
                 }
                 $('#carouselButton').children('span').toggleClass('fa-pause fa-play');
             });
-        });
-    </script> <!-- end of carousel pause/play script -->
-
-    <!-- MODAL script -->
-    <script>
-        $('document').ready(function() {
+    
+            // MODAL script
             // for loginModal
             $('#login').click(function() {
                 $('#loginModal').modal('show');
@@ -363,7 +356,7 @@
                 $('#reservationModal').modal('show');
             });
         });
-    </script> <!-- end of modal script -->
+    </script> <!-- end of carousel pause/play script -->
 
 </body>
 
